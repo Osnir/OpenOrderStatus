@@ -1,0 +1,194 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:vm="sap.ui.comp.variants"
+	controllerName="OpenOrderStatus.OpenOrderStatus.controller.Order" 
+	displayBlock="true">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>orders}">
+				<content>
+					<f:DynamicPage id="dynamicPageId" headerExpanded="true">
+						<f:title>
+							<f:DynamicPageTitle>
+								<f:heading>
+									<vm:VariantManagement id="variant" standardItemText="{i18n>variantItemText}" select="onSelectVariant">
+									</vm:VariantManagement>
+								</f:heading>
+							</f:DynamicPageTitle>
+						</f:title>
+	
+						<f:header>
+							<f:DynamicPageHeader pinnable="true">
+								<f:content>
+									<fb:FilterBar search="onClickSearch" clear="onClickClear" showClearButton="true" showRestoreButton="false" useToolbar="false" showGoOnFB="true">
+										<fb:filterGroupItems>
+											<fb:FilterGroupItem groupName="G1" groupTitle="Filters" name="A" label="{i18n>filter}" visibleInFilterBar="true">
+												<fb:control>
+													<SearchField id="slFilter" placeholder="{i18n>filterSearch}" />
+												</fb:control>				
+											</fb:FilterGroupItem>
+											
+											<fb:FilterGroupItem groupName="G1" groupTitle="Filters" name="B" label="{i18n>filterCustomerPo}" visibleInFilterBar="true">
+												<fb:control>
+													<Select
+														id="slCustomerPo"
+														forceSelection="true"
+														change="onCustomerPoSelectChange"
+														items="{
+				                                        	path: '/CustomerPoCollection'
+				                                        }">
+														<core:Item key="{key}" text="{name}"/>
+													</Select>
+												</fb:control>				
+											</fb:FilterGroupItem>
+											
+											<fb:FilterGroupItem groupName="G1" groupTitle="Filters" name="C" label="{i18n>filterShipTo}" visibleInFilterBar="true">
+												<fb:control>
+													<Select
+														id="slShipTo"
+														forceSelection="true"
+														change="onCustomerPoSelectChange"
+														items="{
+				                                        	path: '/CustomerPoCollection'
+				                                        }">
+														<core:Item key="{key}" text="{name}"/>
+													</Select>
+												</fb:control>				
+											</fb:FilterGroupItem>
+											
+											<fb:FilterGroupItem groupName="G1" groupTitle="Filters" name="D" label="{i18n>customerMatnr}" visibleInFilterBar="true">
+												<fb:control>
+													<Select
+														id="slCustomerMatnr"
+														forceSelection="true"
+														change="onCustomerPoSelectChange"
+														items="{
+				                                        	path: '/CustomerPoCollection'
+				                                        }">
+														<core:Item key="{key}" text="{name}"/>
+													</Select>
+												</fb:control>				
+											</fb:FilterGroupItem>
+											
+											<fb:FilterGroupItem groupName="G1" groupTitle="Filters" name="E" label="{i18n>order}" visibleInFilterBar="true">
+												<fb:control>
+													<Select
+														id="slOrder"
+														forceSelection="true"
+														change="onCustomerPoSelectChange"
+														items="{
+				                                        	path: '/CustomerPoCollection'
+				                                        }">
+														<core:Item key="{key}" text="{name}"/>
+													</Select>
+												</fb:control>				
+											</fb:FilterGroupItem>
+											
+											<fb:FilterGroupItem groupName="G1" groupTitle="Filters" name="F" label="{i18n>filterPlant}" visibleInFilterBar="true">
+												<fb:control>
+													<Select
+														id="slPlant"
+														forceSelection="true"
+														change="onCustomerPoSelectChange"
+														items="{
+				                                        	path: '/CustomerPoCollection'
+				                                        }">
+														<core:Item key="{key}" text="{name}"/>
+													</Select>
+												</fb:control>				
+											</fb:FilterGroupItem>
+										</fb:filterGroupItems>
+									</fb:FilterBar>
+								</f:content>
+							</f:DynamicPageHeader>
+						</f:header>	
+						
+						<f:content>
+							<Table id="tbOrder" 
+								   inset="false"
+								   mode="MultiSelect"
+								   alternateRowColors="true"
+								   items="{ path: '/OrderCollection' }"
+								   growing="true" growingThreshold="5"
+								   noDataText="{i18n>noData}">
+								<headerToolbar>
+									<OverflowToolbar>
+										<Title id="tlTitleBar" text="" level="H4" />
+										<ToolbarSpacer />
+										<SearchField id="searchField" placeholder="{i18n>filterSearch}" value="{/globalFilter}" width="30%" />
+										<Button id="btnSort" icon="sap-icon://sort" press="onClickSort" />
+										<Button id="btnFilter" icon="sap-icon://filter" press="onClickFilter" />
+										<Button id="btnPerso" icon="sap-icon://action-settings" press="onClickPerso" />
+										<Button id="btnExcel" icon="sap-icon://excel-attachment" press="onClickExport" />
+										<Button id="btnPrint" icon="sap-icon://print" press="onClickPrint" />
+									</OverflowToolbar>
+								</headerToolbar>
+								<infoToolbar>
+									<Toolbar id="vsdFilterBar" visible="false">
+										<Text id="vsdFilterLabel" />
+									</Toolbar>
+								</infoToolbar>						
+								<columns>
+									<Column>
+										<Text text="{i18n>custPO}"/>
+									</Column>
+									<Column hAlign="Left" minScreenWidth="Phone" demandPopin="true">
+										<Text text="{i18n>customerMatnr}"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Left">
+										<Text text="{i18n>order}"/>
+									</Column>
+									<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Left">
+										<Text text="{i18n>description}"/>
+									</Column>
+									<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Left">
+										<Text text="{i18n>ordered}"/>
+									</Column>
+									<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Left">
+										<Text text="{i18n>delivered}"/>
+									</Column>
+									<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Left">
+										<Text text="{i18n>scheduled}"/>
+									</Column>
+									<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Left">
+										<Text text="{i18n>balance}"/>
+									</Column>
+									<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Left">
+										<Text text="{i18n>readyShip}"/>
+									</Column>
+									<Column hAlign="Center">
+										<Text text=""/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="{CustPO}"/>
+											<Text text="{Matnr}"/>
+											<Text text="{Order}"/>
+											<Text text="{Description}"/>
+											<Text text="{Ordered}"/>
+											<Text text="{Delivered}"/>
+											<Text text="{Scheduled}"/>
+											<Text text="{Balance}"/>
+											<Text text="{ReadyShip}"/>
+											<Button icon="sap-icon://feeder-arrow" tooltip="{i18n>showDetail}" press="onClickDetail" />
+										</cells>
+									</ColumnListItem>
+								</items>						
+							</Table>
+						</f:content>
+						
+						<f:footer>
+							
+						</f:footer>
+					</f:DynamicPage>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

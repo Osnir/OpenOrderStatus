@@ -1,0 +1,43 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" controllerName="OpenOrderStatus.OpenOrderStatus.controller.Detail">
+	<App>
+		<pages>
+			<Page title="{i18n>orderItemDetail}">
+				<content>
+					<f:SimpleForm id="frm">
+						<f:content>
+							<Label text="{i18n>detailCustomerPo}"/>
+							<Text text="{/CustPO}"/>
+							<Label text="{i18n>detailCustomerMatnr}"/>
+							<Text text="{/CustMatnr}"/>
+							<Label text="{i18n>detailOrderId}"/>
+							<Text text="{/Order}"/>
+							<Label text="{i18n>Matnr}"/>
+							<Text text="{/Matnr}"/>
+							<Label text="{i18n>description}"/>
+							<Text text="{/Description}"/>
+							<Label text="{i18n>detailSoldTo}"/>
+							<Text text="{/SoldTo}"/>
+							<Label text="{i18n>detailShipTo}"/>
+							<Text text="{/ShipTo}"/>
+						</f:content>
+					</f:SimpleForm>
+					
+					<IconTabBar selectedKey="__filter0" id="bar0" expandable="false">
+					    <items>
+					        <IconTabFilter text="QUANTITIES - DATES" id="filter0">
+					            <content>
+									<Text text="Quantities and Dates..."/>
+					            </content>
+					        </IconTabFilter>
+					        <IconTabFilter text="PLANT - ROLLING" id="filter1">
+					        	<content>
+					        		<Text text="Plant and Rolling..."/>
+					        	</content>	
+					        </IconTabFilter>	
+				        </items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

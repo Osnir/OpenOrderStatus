@@ -1,0 +1,121 @@
+{
+  "OrderCollection": [
+    {
+      "CustPO": "4500408107-421692-M2",
+      "Matnr": "M1006001300D",
+      "Order": "187524-1",
+      "Description": "60.00mmX13.00mm RE-SAE 5160H 7950mm",
+      "Ordered": 61.142,
+      "Delivered": 62.140,
+      "Scheduled": 0,
+	  "Balance": 2,
+	  "ReadyShip": 0
+    },
+    {
+      "CustPO": "4500405105-418513-M2",
+      "Matnr": "M1406451018C",
+      "Order": "186451-53",
+      "Description": "63.50mmX10.18mm RE-SAE 51CRV4 7635mm",
+      "Ordered": 1763.698,
+      "Delivered": 1750.298,
+      "Scheduled": 0,
+	  "Balance": 13.400,
+	  "ReadyShip": 0
+    },
+    {
+      "CustPO": "4500408107-421692-M2",
+      "Matnr": "M1406351018C",
+      "Order": "187524-36",
+      "Description": "63.50mmX10.18mm RE-SAE 51CRV4 7635mm",
+      "Ordered": 1102.311,
+      "Delivered": 1030.044,
+      "Scheduled": 0,
+	  "Balance": 272.267,
+	  "ReadyShip": 0
+    },
+    {
+      "CustPO": "4500402119-415479-M2",
+      "Matnr": "M1406351074A",
+      "Order": "184867-54",
+      "Description": "63.50mmX10.74mm RE-SAE 51CRV4 7850mm",
+      "Ordered": 110.231,
+      "Delivered": 93.838,
+      "Scheduled": 0,
+	  "Balance": 16.393,
+	  "ReadyShip": 15.213
+    },
+    {
+      "CustPO": "4500405105-418513-M2",
+      "Matnr": "M1406351113B",
+      "Order": "186451-54",
+      "Description": "63.50mmX11.13mm RE-SAE 51CRV4 8810mm",
+      "Ordered": 1109.662,
+      "Delivered": 1100.761,
+      "Scheduled": 0,
+	  "Balance": 8.901,
+	  "ReadyShip": 8.900
+    },
+    {
+      "CustPO": "4500408107-421692-M2",
+      "Matnr": "M1406351113B",
+      "Order": "187524-38",
+      "Description": "63.50mmX11.13mm RE-SAE 51CRV4 8810mm",
+      "Ordered": 333.693,
+      "Delivered": 151.890,
+      "Scheduled": 142.415,
+	  "Balance": 178.803,
+	  "ReadyShip": 0
+    },
+    {
+      "CustPO": "4500405105-418513-M2",
+      "Matnr": "M1406351135A",
+      "Order": "186451-55",
+      "Description": "63.50mmX11.35mm RE-SAE 51CRV4 8820mm",
+      "Ordered": 222.462,
+      "Delivered": 213.300,
+      "Scheduled": 0,
+	  "Balance": 7.162,
+	  "ReadyShip": 0
+    },
+    {
+      "CustPO": "4500408107-421692-M2",
+      "Matnr": "M1406351135A",
+      "Order": "187524-39",
+      "Description": "63.50mmX11.35mm RE-SAE 51CRV4 7950mm",
+      "Ordered": 176.370,
+      "Delivered": 159.305,
+      "Scheduled": 0,
+	  "Balance": 17.065,
+	  "ReadyShip": 0
+    }
+  ],
+  "CustomerPoCollection" : [
+    {
+      "key" : "0",
+      "name" : ""
+    },
+    {
+      "key" : "1",
+      "name" : "4500408107-421692-M2"
+    },
+    {
+      "key" : "2",
+      "name" : "4500405105-418513-M2"
+    },
+    {
+      "key" : "3",
+      "name" : "4500402119-415479-M2"
+    }
+  ],
+  "OrderDetail" : {
+      "CustPO": "4500408107-421692-M2",
+      "Matnr": "M1006001300D",
+      "Order": "187524-1",
+      "Description": "60.00mmX13.00mm RE-SAE 5160H 7950mm",
+      "Ordered": 61.142,
+      "Delivered": 62.140,
+      "Scheduled": 0,
+	  "Balance": 2,
+	  "ReadyShip": 0
+    }  
+}
